@@ -35,15 +35,60 @@
     font-size: 1.2em;
 }
 
+#aboutMe a:hover {
+    background-color: var(--section-title-color);
+    transition: background-color 0.5s;
+}
+
+#aboutMe a:not(:hover) {
+    background-color: unset;
+    transition: background-color 0.5s;
+}
+
+#aboutMe>a:hover {
+    color: var(--logo-color);
+    transition: color 0.5s;
+}
+
+#aboutMe>a:not(:hover) {
+    color: var(--section-title-color);
+    transition: color 0.5s;
+}
+
+#aboutMe>a {
+    margin: 0;
+    margin-bottom: 1%;
+    padding: 0.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    
+    border: solid var(--section-title-color) 3px;
+    border-radius: 5px;
+
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 500;
+    font-size: 1.2em;
+    text-align: center;
+
+    color: var(--general-text-color);
+}
+
 @media screen and (max-width: 800px) {
     #aboutMe>p {
+        font-size: 1em;
+    }
+
+    #aboutMe>a {
         font-size: 1em;
     }
 }
 
 @media screen and (max-width: 600px) {
-
     #aboutMe>h2 {
         font-size: x-large;
+    }
+
+    #aboutMe>a {
+        font-size: 0.9em;
     }
 }
