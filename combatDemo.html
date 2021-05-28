@@ -6,7 +6,8 @@
     <link rel="icon" href="resources/images/logo.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style/main.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style/combatDemo.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/gamePresentation.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style/contact.css'>
 </head>
 <body>
 
@@ -24,12 +25,147 @@
         </nav>
     </header>
 
-    <main>
-        <section id="workInProgress">
-            <h2>Work In Progress</h2>
-            <img src="resources/images/workInProgress/inDevelopmentGIF.gif" alt="In Development gif">
+    <main class="gamePresentation">
+        <h1>Combat DEMO 3D</h1>
+
+        <section id="description">
+            <div>
+                <h4>Project type:</h4>
+                <p>PC Game Demo</p>
+            </div>
+            <div>
+                <h4>Team:</h4>
+                <p>Solo project</p>
+            </div>
+            <div>
+                <h4>Game engine & Languages:</h4>
+                <p>Unreal Engine 4 | C++</p>
+            </div>
+            <div>
+                <h4>Tools:</h4>
+                <p>Git</p>
+            </div>
+        </section>
+        
+        <p id="resume">
+            Basic 3D melee combat system between a single player and an AI enemy.
+            The player controls the main character and can run in all directions, pick up a weapon in the level and then attack the enemy.
+            The player has the possibility to do a combo from 1 to 3 attacks.
+            The enemy detects when the player is near and go close enough to him to attack him.
+            Both characters have a life and die when its value is lower or equal to zero.
+        </p>
+
+        <video controls>
+            <source src="resources/videos/combatDemo3D/FullPresentation.mp4">
+            Sorry, your browser does not support embedded videos.
+        </video>
+
+        <section class="elementShow">
+            <h2>Camera & Movements</h2>
+            <p>
+                The player can make the character run forward, rotate, run backward and also jump. 
+                On top of that, he can control the camera at the same time and look around in all directions.
+            </p>
+            <video controls>
+                <source src="resources/videos/combatDemo3D/movementsAndCamera.mp4">
+                Sorry, your browser does not support embedded videos.
+            </video>
+        </section>
+
+        <section class="elementShow">
+            <h2>Melee combo</h2>
+            <p>
+                The player can do a simple melee attack as well as a combo to hit his opponent.
+                The combo implies 3 different attacks with thier respective animations.
+                To implement this feature, the main issue to solve to have a better user experience
+                is to manage with accuracy the timing between each attack.
+                I personally used the duration of the animations to know when to allow the player to use the attack input again.
+            </p>
+            <video controls>
+                <source src="resources/videos/combatDemo3D/PlayerCombo.mp4">
+                Sorry, your browser does not support embedded videos.
+            </video>
+            <div class="code">
+                <h3>See Greystone (player) class where the movements, camera and the combo are implemented</h3>
+                <div>
+                    <a href="https://gitlab-ce.iut.u-bordeaux.fr/alalexandre/combatdemo3d/-/blob/cleaned/Source/CombatDEMO/Greystone.h" 
+                            target="_blank" rel="noopener noreferrer">
+                        See Greystone class header's code
+                    </a>
+                    <a href="https://gitlab-ce.iut.u-bordeaux.fr/alalexandre/combatdemo3d/-/blob/cleaned/Source/CombatDEMO/Greystone.cpp" 
+                            target="_blank" rel="noopener noreferrer">
+                        See Greystone class source's code
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="elementShow">
+            <h2>AI Skeleton Enemy</h2>
+            <p>
+                I designed a basic artificial intelligence that controls a character to face the player.
+                The enemy has an idle position where he stands when no player is detected.
+                The enemy can detect a player when he enters a certain detection area, and then run to his position.
+                When the player enters another area close to the enemy, 
+                he is considered in the enemy's attack range, and he can be hurted.
+                When the player gets out of the detection area of the enemy, the enemy goes back to his idle position.
+            </p>
+            <video controls>
+                <source src="resources/videos/combatDemo3D/AIPlayerDetectionAndAttack.mp4">
+                Sorry, your browser does not support embedded videos.
+            </video>
+            <div class="code">
+                <h3>See SkeletonEnemyController and SkeletonEnemy classes</h3>
+                <div>
+                    <a href="https://gitlab-ce.iut.u-bordeaux.fr/alalexandre/combatdemo3d/-/blob/cleaned/Source/CombatDEMO/SkeletonEnemy.h" 
+                            target="_blank" rel="noopener noreferrer">
+                        See SkeletonEnemy class header's code
+                    </a>
+                    <a href="https://gitlab-ce.iut.u-bordeaux.fr/alalexandre/combatdemo3d/-/blob/cleaned/Source/CombatDEMO/SkeletonEnemy.cpp"
+                            target="_blank" rel="noopener noreferrer">
+                        See SkeletonEnemey class source's code
+                    </a>
+                    <a href="https://gitlab-ce.iut.u-bordeaux.fr/alalexandre/combatdemo3d/-/blob/cleaned/Source/CombatDEMO/SkeletonEnemyController.cpp" 
+                            target="_blank" rel="noopener noreferrer">
+                        See SkeletonEnemyController class header's code
+                    </a>
+                    <a href="https://gitlab-ce.iut.u-bordeaux.fr/alalexandre/combatdemo3d/-/blob/cleaned/Source/CombatDEMO/SkeletonEnemyController.h" 
+                            target="_blank" rel="noopener noreferrer">
+                        See SkeletonEnemyController class source's code
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div>
+            <div id="contactIntro">
+                <p>Feel free to contact me here: <a href="mailto:alexandre.sparton.dev@gmail.com">alexandre.sparton.dev@gmail.com</a>.</p>
+                <p>You can also do it through my social medias:</p>
+            </div>
+            <div id="socialMedias">
+                <a href="https://github.com/ASparton" target="_blank" rel="noopener noreferrer" id="githubContact">
+                    <img src="resources/images/contacts/github.png" alt="GitHub">
+                    <p>Github</p>
+                </a>
+                <a href="https://twitter.com/Beyl_dev" target="_blank" rel="noopener noreferrer" id="twitterContact">
+                    <img src="resources/images/contacts/twitter.png" alt="Twitter">
+                    <p>Twitter</p>
+                </a>
+                <a href="https://www.instagram.com/alexandresparton_dev/" target="_blank" rel="noopener noreferrer" id="instagramContact">
+                    <img src="resources/images/contacts/instagram.png" alt="Instagram">
+                    <p>Instagram</p>
+                </a>
+                <a href="https://www.linkedin.com/in/alexandre-sparton-08aa42206/" target="_blank" rel="noopener noreferrer"
+                   id="linkedinContact">
+                    <img src="resources/images/contacts/logo-linkedin.png" alt="Linkedin">
+                    <p>LinkedIn</p>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>Copyright © 2021 | By Sparton Alexandre</p>
